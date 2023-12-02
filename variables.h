@@ -126,7 +126,6 @@
 #define TW_DONT_UNMOUNT_SYSTEM      "tw_dont_unmount_system"
 // #define TW_ALWAYS_RMRF              "tw_always_rmrf"
 
-#define TW_SHOW_DUMLOCK             "tw_show_dumlock"
 #define TW_HAS_INJECTTWRP           "tw_has_injecttwrp"
 #define TW_INJECT_AFTER_ZIP         "tw_inject_after_zip"
 #define TW_HAS_DATADATA             "tw_has_datadata"
@@ -151,6 +150,11 @@
 #define TW_VIRTUAL_AB_ENABLED       "tw_virtual_ab.enabled"
 #define TW_AUTO_REFLASHTWRP_VAR     "tw_auto_reflashtwrp"
 
+// BUILD PROPS
+#define TW_FASTBOOT_MODE_PROP         "ro.twrp.fastbootd"
+#define TW_MODULES_MOUNTED_PROP       "twrp.modules.loaded"     // property for successfully mounted modules
+#define TW_KEYMASTER_VERSION_PROP     "keymaster_ver"
+
 // Theme versioning
 // version 2 requires theme to handle power button as action togglebacklight
 // version 4 adds listbox support to reboot page
@@ -174,7 +178,7 @@
 //#define MAX_ARCHIVE_SIZE 52428800LLU // 50MB split for testing
 
 #ifndef CUSTOM_LUN_FILE
-#define CUSTOM_LUN_FILE "/sys/class/android_usb/android0/f_mass_storage/lun%d/file"
+#define CUSTOM_LUN_FILE "/config/usb_gadget/g1/functions/mass_storage.0/lun.%d/file"
 #endif
 
 #define SCRIPT_FILE_TMP "/tmp/openrecoveryscript"
